@@ -2,10 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import DataLayer from './DataLayer';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* this can be called anything. Ur gonna make an provider inside it */}
+    <DataLayer initialState reducer>
+      {/* the app is the children of the  DataLayer, ref:DataLayer.js */}
+      <App/>
+    </DataLayer>
   </React.StrictMode>,
   document.getElementById('root')
 );
